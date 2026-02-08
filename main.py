@@ -6,7 +6,8 @@ try:
     import huggingface_hub
 except ImportError:
     subprocess.check_call([sys.executable, "-m", "pip", "install", "huggingface_hub", "python-telegram-bot", "SpeechRecognition", "pydub"])
-
+import static_ffmpeg
+static_ffmpeg.add_paths()
 import os
 import json
 import io
@@ -279,3 +280,4 @@ if __name__ == '__main__':
     print("🔥 БОТ ЗАПУЩЕН")
 
     app.run_polling()
+
