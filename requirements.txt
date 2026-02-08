@@ -2,3 +2,4 @@ python-telegram-bot
 huggingface_hub
 SpeechRecognition
 pydub
+static-ffmpeg
