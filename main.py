@@ -1,3 +1,12 @@
+import subprocess
+import sys
+
+# Принудительная установка нужных библиотек при старте
+try:
+    import huggingface_hub
+except ImportError:
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "huggingface_hub", "python-telegram-bot", "SpeechRecognition", "pydub"])
+
 import os
 import json
 import io
@@ -268,4 +277,5 @@ if __name__ == '__main__':
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_msg))
     app.add_handler(MessageHandler(filters.COMMAND, unknown))
     print("🔥 БОТ ЗАПУЩЕН")
+
     app.run_polling()
